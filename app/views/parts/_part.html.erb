@@ -1,0 +1,40 @@
+<%= turbo_frame_tag dom_id(part) do %>
+  <div class="card m-4">
+    <div class="card-body">
+      <%= form_with(model: part) do |form| %>
+        <% if @debug %>
+          <%= part.errors.inspect %>
+        <% end %>
+        <% if part.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(part.errors.count, "error") %> prohibited this part from being saved:</h2>
+
+            <ul>
+              <% part.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <% if @debug %>
+          <div><%= part.inspect %><div>
+        <% end %>
+        <div class="actions">
+          Name
+          <%= form.text_field :name %>
+          supplier_parts_number
+          <%= form.text_field :supplier_parts_number %>
+          supplier_quote_number
+          <%= form.text_field :supplier_quote_number %>
+          unit_cost
+          <%= form.number_field :unit_cost %>
+          ads_cost
+          <%= form.number_field :ads_cost %>
+          <%= form.submit %>
+          <%= link_to 'Destroy', part, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
