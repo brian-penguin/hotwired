@@ -14,3 +14,6 @@ bundle install
 bundle exec rake db:setup
 bundle exec rails server
 ```
+
+Then visit the one interesting route so far: 
+`http://localhost:3000/parts?debug=true`
