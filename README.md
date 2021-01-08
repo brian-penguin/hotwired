@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a breakable toy for playing with and understanding hotwire, turbolinks, and stimulus JS as they might be used for other projects.
 
-Things you may want to cover:
+Requirements
+- See [toolversions file](https://github.com/brimatteng/hotwired/blob/main/.tool-versions) for current language versions
+- Postgres
+- Redis
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Get started: 
+```
+bundle install
+bundle exec rake db:setup
+bundle exec rails server
+```
